@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        body, html {
+            height: 100%; /* Ensure full height */
+            margin: 0; /* Remove default margin */
+        }
+    
+        body::after {
+            content: ""; /* Required for pseudo-elements */
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('./bg1.png') center center no-repeat; /* Set your image path */
+            background-size: cover; /* Cover the entire area */
+            opacity: 0.1; /* Set the opacity to 50% */
+            z-index: -1; /* Place the background behind other content */
+        }
+    </style>
+</head>
+<body>
+    <h1>Course and Chapter Details</h1>
+    <div id="content"></div>
+    <script src="coursesScript.js"></script>
+</body>
+</html>
