@@ -1,0 +1,386 @@
+@keyframes animatedBackground {
+    0% { background-position: 0 0; }
+    50% { background-position: 100% 0; }
+    100% { background-position: 0 0; }
+}
+.subject-name {
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.subject-name::after {
+    content: ' \25BC'; /* Down arrow icon */
+    display: inline-block;
+}
+
+.chapters-container {
+    display: none; /* Hidden by default */
+    padding-left: 20px; /* Indentation for chapters */
+}
+
+.subject-container + .subject-container {
+    margin-top: 15px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(270deg, #373B44, #4286f4, #373B44);
+    background-size: 400% 400%;
+    animation: animatedBackground 15s ease infinite;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+    overflow-y: auto;
+}
+
+/* Remove default bullets */
+ul {
+    list-style-type: none; /* Removes bullet points */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Adjust as needed */
+}
+
+.subject-name {
+    cursor: pointer;
+}
+
+.subject-name::after {
+    content: ' ▼'; /* Downward arrow, indicating expandable */
+    font-size: 0.8rem;
+}
+
+.subject-container .chapters-container {
+    padding-left: 20px; /* Indent chapters for better hierarchy visualization */
+}
+
+/* Hide the default checkbox */
+input[type="checkbox"] {
+    display: none; /* Hides the checkbox but it remains functional */
+}
+
+/* Custom checkbox design */
+input[type="checkbox"] + label {
+    position: relative;
+    padding-left: 25px; /* Space for custom checkbox */
+    cursor: pointer;
+    display: inline-block;
+}
+
+html
+{
+    overflow-y: auto;
+}
+/* Custom checkbox appearance */
+input[type="checkbox"] + label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border: 2px solid #555; /* Customizable */
+    border-radius: 4px; /* Optional for rounded corners */
+}
+
+/* Change appearance when checked */
+input[type="checkbox"]:checked + label::before {
+    background-color: #4CAF50; /* Checked state color */
+    border-color: #4CAF50; /* Optional: change border color as well */
+}
+
+/* Optional: Add a checkmark when checked */
+input[type="checkbox"]:checked + label::after {
+    content: '✓';
+    position: absolute;
+    left: 3px;
+    /* top: 1px; */
+    font-size: 18px;
+    color: white;
+}
+
+/* Hide chapters list initially */
+.chapters.hidden {
+    display: none;
+}
+
+/* Arrow indicator next to subject header */
+.subject h2 .arrow {
+    display: inline-block;
+    margin-left: 10px;
+    margin-bottom: 7px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    padding: 3px;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+/* Rotate arrow when list is open */
+.subject h2 .arrow.open {
+    transform: rotate(-135deg);
+}
+
+/* Custom styling for clickable subject headers */
+.subject h2 {
+    cursor: pointer;
+    user-select: none; /* Prevent text selection on click */
+}
+
+/* Styling for visible chapters list */
+.chapters:not(.hidden) {
+    display: block; /* Or 'flex', depending on your layout preference */
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns content to the top-left */
+    padding: 20px; /* Adds some spacing inside the container */
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin: 20px 0;
+    text-align: center;
+    color: #ffffff;
+}
+
+.dropdown-container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease; 
+}
+
+.dropdown-container:hover {
+    transform: scale(1.05); 
+}
+
+select, button {
+    padding: 10px 15px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    outline: none; 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    transition: background-color 0.3s ease; 
+}
+
+select:hover {
+    background-color: rgb(238, 218, 178);
+}
+
+ button:hover {
+    background-color: rgb(89, 168, 217); 
+}
+
+button {
+    padding: 10px 20px;  /* Good padding makes the button easier to interact with */
+    margin-top: 20px;  /* Adds space above the button */
+    margin-bottom: 20px;  /* Adds space below the button */
+    width: auto;  /* Adjust width as necessary, or use 'auto' for automatic width based on content */
+    cursor: pointer;  /* Indicates the button is clickable */
+    background-color: black;
+    color: #ffffff; 
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+.dropdown-container {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.subject {
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.chapters {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.chapters.hidden {
+    display: none;
+}
+
+.subject {
+    cursor: pointer;
+    margin: 20px 0;
+    font-size: 1.2em;
+}
+
+.chapters {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.chapters.hidden {
+    display: none;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+.study-slot {
+    background-color: #c143d4;
+}
+
+.break-slot {
+    background-color: #ea7777;
+}
+#content {
+    display: flex;
+    flex-direction: column;  /* Stack children vertically */
+    align-items: center;  /* Center-align children horizontally */
+    justify-content: center;  /* Optional: Center-align children vertically */
+    width: 100%;  /* Take full width of the container */
+}
+
+.revision-slot {
+    background-color: #423fe4;
+}
+
+
+
+.subjects-container {
+    margin-top: 20px;
+}
+
+li {
+    margin: 15px 0;
+}
+
+input[type="checkbox"] {
+    opacity: 0; /* Hides the default checkbox */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+}
+
+input[type="checkbox"] + label::before {
+    content: ''; /* Needed for custom checkbox appearance */
+    position: relative;
+    vertical-align: middle; /* Aligns the pseudo-element with the text */
+    width: 20px;
+    height: 20px;
+    border: 2px solid #333;
+    /* border-radius: 90%; Circular design */
+    margin-right: 10px; /* Space between the custom checkbox and label text */
+    background: #fff;
+}
+
+input[type="checkbox"]:checked + label::before {
+    background: #5cb85c; /* Green background for checked state */
+    border-color: #4cae4c; /* Darker green border */
+}
+
+input[type="checkbox"]:checked + label::after {
+    content: '✔';
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    color: white;
+    font-size: 14px;
+}
+.chapter-element {
+    padding: 10px;  /* Adds space inside each chapter container */
+    margin: 10px 0; /* Adds vertical space between chapter containers */
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for each element */
+    border-radius: 5px; /* Rounded corners */
+    display: flex;
+    align-items: center; /* Aligns items vertically in the center */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+
+.chapter-element:hover {
+    background-color: rgba(255, 255, 255, 1); /* Fully opaque white on hover */
+}
+.chapters-container {
+    max-height: 300px; /* Limits the height of the container */
+    overflow-y: auto; /* Enables vertical scrolling */
+    border-radius: 8px; /* Optional: rounds the corners */
+    padding: 10px; /* Adds spacing inside the container */
+    background: linear-gradient(to bottom, #000000, #000000); /* Light gradient background */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds subtle shadow for depth */
+    margin-bottom: 20px; /* Adds space below the container */
+}
+input[type="number"], input[type="text"] {
+    width: 300px; /* Adjust width as needed */
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 3px #ddd;
+    font-size: 16px;
+    display: block; /* Makes it easier to manage layout */
+}
+
+#youtubeVideos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));  /* Creates a grid with columns that are at least 280px wide */
+    gap: 20px;  /* Space between grid items */
+    /* padding: 20px;  Padding around the entire grid */
+    width: 100%;  /* Optional: adjust based on layout needs */
+    max-width: 1200px;  /* Optional: limit the width of the grid for large screens */
+    margin: auto;  /* Center the grid horizontally */
+}
+
+.video-card {
+    background: white;
+    height: 180px;  /* Fixed height for rectangular shape */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.video-card:hover {
+    transform: scale(1.05);
+}
+
+.video-card img {
+    width: 100%;
+    height: 120px;  /* Adjust height to maintain aspect ratio */
+    object-fit: cover;
+}
+
+.video-card h3 {
+    margin: 0;
+    padding: 5px 10px;
+    color: #333;
+    font-size: 16px;
+}
+
+.video-card a {
+    text-decoration: none;
+    color: inherit;  /* Ensures link inherits text color from parent */
+}
