@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Study Scheduling System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        body, html {
+            height: 100%; /* Ensure full height */
+            margin: 0; /* Remove default margin */
+        }
+    
+        body::after {
+            content: ""; /* Required for pseudo-elements */
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('./bg1.png') center center no-repeat; /* Set your image path */
+            background-size: cover; /* Cover the entire area */
+            opacity: 0.5; /* Set the opacity to 50% */
+            z-index: -1; /* Place the background behind other content */
+        }
+    </style>
+</head>
+<body>
+    <h1>Study Scheduling System</h1>
+    <div class="dropdown-container">
+        <select id="course">
+            <option value="">Select Course</option>
+            <option value="AI&DS">AI&DS</option>
+            <option value="Computer">Computer Engineering</option>
+            <option value="Civil">Civil Engineering</option>
+            <option value="Electronics and Telecommunication Engineering">Electronics and Telecommunication Engineering</option>
+            <option value="IT">IT</option>
+        </select>
+
+        <select id="semester">
+            <option value="">Select Semester</option>
+        </select>
+
+        <button type="button" id="continue">Continue</button>
+    </div>
+
+    <script src="indexScript.js"></script>
+</body>
+</html>
