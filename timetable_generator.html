@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body, html {
+            height: 100%; /* Ensure full height */
+            margin: 0; /* Remove default margin */
+        }
+    
+        body::after {
+            content: ""; /* Required for pseudo-elements */
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('./bg2.png') center center no-repeat; /* Set your image path */
+            background-size: cover; /* Cover the entire area */
+            opacity: 0.5; /* Set the opacity to 50% */
+            z-index: -1; /* Place the background behind other content */
+        }
+    </style>
+</head>
+<body>
+    <h2>All the best champ , you can do it !</h2>
+    <h6>Here are some video recommendations for you : </h6>
+<div id="youtubeVideos" >
+
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.14/jspdf.plugin.autotable.min.js"></script>
+<script src="timetable_generator.js"></script>
+</body>
+</html>
