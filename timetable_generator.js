@@ -196,7 +196,7 @@ function generatePDF(schedules) {
 }
 
 function fetchYouTubeVideos(chapterNames) {
-    const apiKey = 'AIzaSyCqnfxZdDc3cYI1jWZTNFesFAsYCBalYw8';  // Use your actual API key
+    const apiKey = 'xyz';  // Use your actual API key
     const videoFetchPromises = chapterNames.map(name => {
         const url = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&q=${encodeURIComponent(name)}&part=snippet&type=video&maxResults=1`;
         return fetch(url)
